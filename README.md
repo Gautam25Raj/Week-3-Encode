@@ -1,70 +1,30 @@
-# Week-3-Encode
-## Homework Week 3
+# Solidity Project: MyToken and TokenizedBallot
 
-Gautam Raj @nooberboy 
+This project demonstrates the integration of Solidity smart contracts with the Ethereum blockchain, featuring an ERC20 token (`MyToken`) and a voting system (`TokenizedBallot`). It includes a TypeScript script for deploying and interacting with these contracts on the Ethereum blockchain using the Viem library.
 
-SeeragU @rag791
+## Smart Contracts
 
-Hrithik Edward Sampson @hrithik9619 
+- **MyToken.sol**: An ERC20 token that implements the ERC20Permit and ERC20Votes extensions, enabling operations like minting tokens and voting with token holdings.
+- **TokenizedBallot.sol**: A contract for creating a token-based voting system where token holders can vote for proposals using their tokens.
 
-## Short summary
-A smart contract deployed on Sepolia testnet for users to cast votes on Number: 
-- 0 0x0000000000000000000000000000000000000000000000000000000000000001 
-- 1 0x0000000000000000000000000000000000000000000000000000000000000002
-- 2 0x0000000000000000000000000000000000000000000000000000000000000003
-- Block Number: 5608609
+## Deployment and Interaction
 
-## Project purpose
-Smart Contract knowledge to Deploy, Delegate and cast votes.
+To deploy the `MyToken` and `TokenizedBallot` contracts and interact with them, run the TypeScript script provided in the project. This script demonstrates how to mint tokens, transfer tokens to another account, delegate votes, and cast votes.
 
-## Transaction details
-1. Create Contract
+### Running the Script
 
-  MyToken.sol:
-    
-    Contract address: 0x2c14f5e9e0fe99af55c97b5fcbc3d61fdb5f4115
-    Transaction hash: 0xc676c2534c52e67dae315b7d34200c063d79ad51875a7f2abeabe357415a7d85 
-    Status: success
-  
-  TokenizedBallot.sol:
-  
-    Contract address: 0x6b1c724df21165d8107030fee46ae343fd98654d
-    Transaction hash: 0x23b75bc39115c47b3985b8bbdff35288b99a5d5a5f4005b1d51f9981ba894bdc  
-    Status: success
+Use the following command to deploy the contracts and interact with them on the Ethereum blockchain:
 
-2. Give right to vote
-  ``` 
-    Add voter 0xf989CA835FE863907E0CCce67dD4E08ac6Dd7E5f
-    Transaction hash: 0x1397516545fe830976b636fd8cae9284816e0bfdaf81f85b536b2b33b9cffe24
-    Status: success
-    
-    Add voter 0xD6e0613A2cAEa9227e6E7eB2Bbe56F6E99EC08bb
-    Transaction hash: 0x765ea07ae83ff905f268f06fcdf9e58599fd7317dca3890984158430705d83d4
-    Status: success
-    
-    Add voter 0x445e82fbc39897Db65e80A198742Bb175a6D5E0E
-    Transaction hash: 0xad43147dd90b1b064abb5802456cd9926a0bc7eb7ef2724fd13caa5f0b2e9893
-    Status: success
-  ```
+`npx ts-node --files ./scripts/DeployWithViemAndContractInteraction.ts`
 
-3. Vote
-  ```
-    Voter 0x6b1c724dF21165d8107030FeE46Ae343Fd98654D
-    Transaction hash: 0x727d1eee199c4b562f5ce6b762ba4d1d921d26fe13bd24bdcf606a35e6d542c9
-    Status: success
-  ```
+This will deploy the `MyToken` and `TokenizedBallot` contracts, perform operations such as token minting, transferring tokens to a second account, delegating voting power, casting a vote, and displaying the winning proposal.
 
-5. Vote count for proposals
-  ```
-    Proposal 1 0x0000000000000000000000000000000000000000000000000000000000000002 has 10 votes so far.
-  ```
+## Output
 
-7. Delegate vote
-  ```
-    Voter 0xDb1d125C9f7faE45d7CeE470d048670a85270f4D delegates to 0x996A5ed069A393F0b25A08f3212F619D801bA110
-    Transaction hash: 0xce54c5036aea143e9b50e4eae53598f267a21ff976ed8269256dd1877d8eb2d1
-    Status: succeed
-  ```
+Running the script will output the process of deploying the contracts, minting and transferring tokens, delegating votes, voting, and announcing the winning proposal in the terminal.
 
-9. Winning proposal
-The winner is: 0x0000000000000000000000000000000000000000000000000000000000000002
+## Considerations
+
+- Make sure you have sufficient ETH in your wallet to cover the gas costs associated with deploying and interacting with the contracts.
+- This project is configured to use the Sepolia test network. Ensure you have test ETH for this network.
+- Familiarize yourself with the functionality of each smart contract and the deployment/interaction script before executing any transactions on the Ethereum blockchain.
