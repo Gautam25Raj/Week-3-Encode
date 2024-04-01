@@ -1,7 +1,10 @@
 # Week-3-Encode
 ## Homework Week 3
+
 Gautam Raj @nooberboy 
+
 SeeragU @rag791
+
 Hrithik Edward Sampson @hrithik9619 
 
 ## Short summary
